@@ -13,6 +13,10 @@ export default function Infrastructure() {
       image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_4468.JPG-8JIOu2DN0yCODTiG10qmdmg58ojjFa.jpeg",
     },
     {
+      key: "transport",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%202-RxrXSCjdzFu8qSwx3rTaR8m4Rtu1KX.jpeg",
+    },
+    {
       key: "railway",
       image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_4465.JPG-BZqg8g9JyRhZxJWXi3oQzSM9mv5wsp.jpeg",
     },
@@ -38,7 +42,7 @@ export default function Infrastructure() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {facilities.map((facility, index) => (
             <motion.div
               key={index}

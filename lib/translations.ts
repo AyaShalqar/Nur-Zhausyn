@@ -34,6 +34,7 @@ export const translations = {
         afghanistan: "Ауғанстан",
         azerbaijan: "Әзірбайжан",
       },
+      reliability: "Өзінің қызметі барысында 'Нұр жаусын импэкс' халықаралық және ұлттық нарықтарда сенімді және адал серіктес ретінде танылды.",
     },
     products: {
       title: "Біздің өнімдер",
@@ -66,6 +67,10 @@ export const translations = {
         title: "Сапаны бақылау",
         description: "Қатаң сапа бақылау процестері",
       },
+      transport: {
+        title: "Жүк тасымалы",
+        description: "Біз астықты бүкіл әлем бойынша тиімді және мінсіз жеткізуді қамтамасыз ететін инновациялық логистикалық шешімдерді ұсынамыз. Өндірушіден тұтынушыға дейін тауарларды уақытылы және сапалы жеткізу.",
+      },
     },
     contact: {
       title: "Коммерциялық ұсыныс сұрау",
@@ -81,6 +86,23 @@ export const translations = {
       sending: "Жіберілуде...",
       success: "Рахмет! Сіздің хабарламаңыз сәтті жіберілді.",
       error: "Кешіріңіз, қате орын алды. Қайталап көріңіз.",
+    },
+    capabilities: {
+      wagonsPerMonth: "вагон/ай",
+      flourTitle: "Ұн жеткізу",
+      flourDescription: "Айына 100 вагонға дейін ұн жеткізу мүмкіндігі",
+      branTitle: "Кебек жеткізу",
+      branDescription: "Айына 300 вагонға дейін кебек жеткізу мүмкіндігі",
+      deliveryTitle: "Жеткізу",
+      deliveryDescription: "Кез келген аймаққа жеткізу. Жеткізу құны тапсырыстың салмағы мен көлеміне, сондай-ақ қашықтыққа байланысты.",
+      directPurchaseTitle: "Тікелей сатып алу",
+      directPurchaseDescription: "Ауыл шаруашылығы өндірушілерінен өнімдерді тікелей сатып алу",
+    },
+    footer: {
+      description: "Nur Zhausyn Impex - ведущая компания в сфере сельского хозяйства и торговли в Казахстане",
+      contactTitle: "Контакты",
+      socialTitle: "Социальные сети",
+      rights: "Все права защищены",
     },
   },
   ru: {
@@ -119,6 +141,7 @@ export const translations = {
         afghanistan: "Афганистан",
         azerbaijan: "Азербайджан",
       },
+      reliability: "За время своего существования 'Нұр жаусын импэкс' зарекомендовал себя как надежный и честный партнер, работающий на международных и национальных рынках.",
     },
     products: {
       title: "Наша продукция",
@@ -151,6 +174,10 @@ export const translations = {
         title: "Контроль качества",
         description: "Строгие процессы контроля качества",
       },
+      transport: {
+        title: "Грузовые перевозки",
+        description: "Мы предлагаем инновационные логистические решения, обеспечивающие эффективную и безупречную доставку зерна по всему миру. Своевременная и качественная доставка товара от производителя к потребителю.",
+      },
     },
     contact: {
       title: "Запросить коммерческое предложение",
@@ -166,6 +193,23 @@ export const translations = {
       sending: "Отправка...",
       success: "Спасибо! Ваше сообщение успешно отправлено.",
       error: "Извините, что-то пошло не так. Пожалуйста, попробуйте снова.",
+    },
+    capabilities: {
+      wagonsPerMonth: "вагонов/месяц",
+      flourTitle: "Поставки муки",
+      flourDescription: "Объем поставок муки до 100 вагонов в месяц",
+      branTitle: "Поставки отрубей",
+      branDescription: "Объем поставок отрубей до 300 вагонов в месяц",
+      deliveryTitle: "Доставка",
+      deliveryDescription: "Доставка в любые регионы. Стоимость доставки зависит от веса и объема заказа, а также расстояния.",
+      directPurchaseTitle: "Прямые закупки",
+      directPurchaseDescription: "Прямые закупки продукции у сельхозпроизводителей",
+    },
+    footer: {
+      description: "Nur Zhausyn Impex - ведущая компания в сфере сельского хозяйства и торговли в Казахстане",
+      contactTitle: "Контакты",
+      socialTitle: "Социальные сети",
+      rights: "Все права защищены",
     },
   },
   en: {
@@ -203,6 +247,7 @@ export const translations = {
         afghanistan: "Afghanistan",
         azerbaijan: "Azerbaijan",
       },
+      reliability: "During its existence, 'Nur Zhausyn Impex' has established itself as a reliable and honest partner operating in international and national markets.",
     },
     products: {
       title: "Our Products",
@@ -235,6 +280,10 @@ export const translations = {
         title: "Quality Control",
         description: "Rigorous quality control processes",
       },
+      transport: {
+        title: "Transport Freight",
+        description: "We offer innovative logistics solutions, ensuring efficient and flawless grain delivery worldwide. Timely and quality delivery of goods from producer to consumer.",
+      },
     },
     contact: {
       title: "Request a Commercial Proposal",
@@ -250,6 +299,23 @@ export const translations = {
       sending: "Sending...",
       success: "Thank you! Your message has been sent successfully.",
       error: "Sorry, something went wrong. Please try again.",
+    },
+    capabilities: {
+      wagonsPerMonth: "wagons/month",
+      flourTitle: "Flour Supply",
+      flourDescription: "Flour supplies up to 100 wagons per month",
+      branTitle: "Bran Supply",
+      branDescription: "Bran supply volume up to 300 wagons per month",
+      deliveryTitle: "Delivery",
+      deliveryDescription: "Delivery to any regions. The cost depends on weight, volume, and distance.",
+      directPurchaseTitle: "Direct Purchase",
+      directPurchaseDescription: "Direct purchase of products from agricultural producers",
+    },
+    footer: {
+      description: "Nur Zhausyn Impex - ведущая компания в сфере сельского хозяйства и торговли в Казахстане",
+      contactTitle: "Контакты",
+      socialTitle: "Социальные сети",
+      rights: "Все права защищены",
     },
   },
 }

@@ -5,6 +5,7 @@ import Infrastructure from "@/components/infrastructure"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import Navigation from "@/components/navigation"
+import Capabilities from "@/components/capabilities"
 
 export default function Home() {
   return (
@@ -15,6 +16,9 @@ export default function Home() {
       </section>
       <section id="about">
         <About />
+      </section>
+      <section id="capabilities">
+        <Capabilities />
       </section>
       <section id="products">
         <Products />

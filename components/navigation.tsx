@@ -47,7 +47,7 @@ export default function Navigation() {
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3360-removebg-preview-hgan665EZcL46lOyxXpVImcBuOyGJa.png"
               alt="Nur Zhausyn Impex Logo"
-              width={120}
+              width={300}
               height={50}
               className="h-12 w-auto cursor-pointer"
               onClick={() => scrollToSection("hero")}

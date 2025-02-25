@@ -32,13 +32,17 @@ export default function About() {
   return (
     <section id="about" className="py-20">
       <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-4xl font-bold mb-6">{t("about", "title")}</h2>
+          <p className="text-lg text-gray-600 mb-6">{t("about", "description")}</p>
+          <p className="text-lg text-gray-600">{t("about", "reliability")}</p>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-12">
           <div className="max-w-2xl">
-            <h2 className="text-4xl font-bold mb-6">{t("about", "title")}</h2>
+    
             
             <div className="space-y-8">
-              <p className="text-lg text-gray-600">{t("about", "description")}</p>
-              
               <div>
                 <h3 className="text-2xl font-semibold mb-4">{t("about", "director")}</h3>
                 <p className="text-gray-600">{t("about", "directorName")}</p>
@@ -85,7 +89,7 @@ export default function About() {
             >
               <div className="relative h-[600px] rounded-lg overflow-hidden">
                 <Image
-                  src="/sunflower-seeds.jpg"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_4463.JPG-4e4WklWhJcxVNqZh23Iy1AteBGcrxd.jpeg"
                   alt={t("about", "imageAlt")}
                   fill
                   className="object-cover"
