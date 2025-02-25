@@ -7,8 +7,8 @@ export const translations = {
       contact: "Байланыс",
     },
     hero: {
-      title: "2014 жылдан бері астық экспортының көшбасшысы",
-      subtitle: "Орталық Азия және одан тыс жерлердегі жоғары сапалы бидай, ұн және ауылшаруашылық өнімдері",
+      title: "ТОО Nur Zhausyn Impex",
+      subtitle: "Холдингтің сауда компаниясы, астық пен майлы дақылдарды экспорттаумен айналысады",
     },
     about: {
       title: "Nur Zhausyn Impex туралы",
@@ -91,9 +91,9 @@ export const translations = {
       contact: "Контакты",
     },
     hero: {
-      title: "Лидер экспорта зерна с 2014 года",
+      title: "ТОО Nur Zhausyn Impex",
       subtitle:
-        "Высококачественная пшеница, мука и сельскохозяйственная продукция в Центральной Азии и за её пределами",
+        "Трей­дин­го­вая ком­па­ния хол­дин­га, за­ни­ма­ю­ща­я­ся экс­пор­том зер­но­вых и мас­лич­ных куль­тур",
     },
     about: {
       title: "О Nur Zhausyn Impex",
@@ -176,8 +176,8 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      title: "Leading Grain Export Excellence Since 2014",
-      subtitle: "Premium quality wheat, flour, and agricultural products across Central Asia and beyond",
+      title: "ТОО Nur Zhausyn Impex",
+      subtitle: "Trading company of the holding company engaged in export of grain and oilseeds",
     },
     about: {
       title: "About Nur Zhausyn Impex",
