@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
@@ -10,26 +8,28 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { toast } from "sonner"
+import { useLanguage } from "@/contexts/language-context"
 
-type UserType = "инвестор" | "партнёр" | "поставщик"
+type UserType = "investor" | "partner" | "supplier"
 
 interface FormData {
-  имя: string
-  телефон: string
-  компания: string
-  регион: string
-  сообщение: string
-  типПользователя: UserType
+  name: string
+  phone: string
+  company: string
+  region: string
+  message: string
+  userType: UserType
 }
 
-export default function Контакт() {
+export default function Contact() {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState<FormData>({
-    имя: "",
-    телефон: "",
-    компания: "",
-    регион: "",
-    сообщение: "",
-    типПользователя: "инвестор",
+    name: "",
+    phone: "",
+    company: "",
+    region: "",
+    message: "",
+    userType: "investor",
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -39,29 +39,26 @@ export default function Контакт() {
     setIsSubmitting(true)
 
     try {
-      // Здесь обычно отправляются данные в API
-      await new Promise((resolve) => setTimeout(resolve, 1000)) // Симуляция запроса к API
-
-      toast.success("Спасибо! Ваше сообщение успешно отправлено.")
-
-      // Очистка формы
+      // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+      toast.success(t("contact", "success"))
       setFormData({
-        имя: "",
-        телефон: "",
-        компания: "",
-        регион: "",
-        сообщение: "",
-        типПользователя: "инвестор",
+        name: "",
+        phone: "",
+        company: "",
+        region: "",
+        message: "",
+        userType: "investor",
       })
     } catch (error) {
-      toast.error("Извините, произошла ошибка. Пожалуйста, попробуйте снова.")
+      toast.error(t("contact", "error"))
     } finally {
       setIsSubmitting(false)
     }
   }
 
   return (
-    <section id="контакт" className="py-20">
+    <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,88 +67,99 @@ export default function Контакт() {
           transition={{ duration: 0.8 }}
           className="max-w-2xl mx-auto"
         >
-          <h2 className="text-3xl font-bold mb-8">Запросить коммерческое предложение</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">{t("contact", "title")}</h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <Label>
-                Ваше имя <span className="text-red-500">*</span>
+                {t("contact", "name")} <span className="text-red-500">*</span>
               </Label>
               <Input
                 required
-                value={formData.имя}
-                onChange={(e) => setFormData({ ...formData, имя: e.target.value })}
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="border-gray-300"
+                placeholder={t("contact", "name")}
               />
             </div>
 
             <div className="space-y-2">
               <Label>
-                Контактный телефон <span className="text-red-500">*</span>
+                {t("contact", "phone")} <span className="text-red-500">*</span>
               </Label>
               <Input
                 required
                 type="tel"
-                value={formData.телефон}
-                onChange={(e) => setFormData({ ...formData, телефон: e.target.value })}
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="border-gray-300"
+                placeholder="+7 (___) ___-__-__"
               />
             </div>
 
             <div className="space-y-2">
               <Label>
-                Название компании <span className="text-red-500">*</span>
+                {t("contact", "company")} <span className="text-red-500">*</span>
               </Label>
               <Input
                 required
-                value={formData.компания}
-                onChange={(e) => setFormData({ ...formData, компания: e.target.value })}
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                 className="border-gray-300"
+                placeholder={t("contact", "company")}
               />
             </div>
 
             <div className="space-y-2">
               <Label>
-                Город, регион <span className="text-red-500">*</span>
+                {t("contact", "region")} <span className="text-red-500">*</span>
               </Label>
               <Input
                 required
-                value={formData.регион}
-                onChange={(e) => setFormData({ ...formData, регион: e.target.value })}
+                value={formData.region}
+                onChange={(e) => setFormData({ ...formData, region: e.target.value })}
                 className="border-gray-300"
+                placeholder={t("contact", "region")}
               />
             </div>
 
             <div className="space-y-2">
-              <Label>Сообщение</Label>
+              <Label>{t("contact", "message")}</Label>
               <Textarea
-                value={formData.сообщение}
-                onChange={(e) => setFormData({ ...formData, сообщение: e.target.value })}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="min-h-[100px] border-gray-300"
+                placeholder={t("contact", "message")}
               />
             </div>
 
-            <RadioGroup
-              value={formData.типПользователя}
-              onValueChange={(value: UserType) => setFormData({ ...formData, типПользователя: value })}
-              className="flex gap-6"
-            >
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="инвестор" id="инвестор" />
-                <Label htmlFor="инвестор">Инвестор</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="партнёр" id="партнёр" />
-                <Label htmlFor="партнёр">Партнёр</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="поставщик" id="поставщик" />
-                <Label htmlFor="поставщик">Поставщик</Label>
-              </div>
-            </RadioGroup>
+            <div className="space-y-2">
+              <RadioGroup
+                value={formData.userType}
+                onValueChange={(value: UserType) => setFormData({ ...formData, userType: value })}
+                className="flex flex-wrap gap-6 mt-2"
+              >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="investor" id="investor" />
+                  <Label htmlFor="investor">{t("contact", "investor")}</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="partner" id="partner" />
+                  <Label htmlFor="partner">{t("contact", "partner")}</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="supplier" id="supplier" />
+                  <Label htmlFor="supplier">{t("contact", "supplier")}</Label>
+                </div>
+              </RadioGroup>
+            </div>
 
-            <Button type="submit" disabled={isSubmitting} className="w-40 bg-red-500 hover:bg-red-600 text-white">
-              {isSubmitting ? "Отправка..." : "Отправить"}
+            <Button 
+              type="submit" 
+              disabled={isSubmitting} 
+              className="w-full md:w-auto bg-amber-600 hover:bg-amber-700 text-white"
+            >
+              {isSubmitting ? t("contact", "sending") : t("contact", "send")}
             </Button>
           </form>
         </motion.div>

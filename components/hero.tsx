@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
 
 export default function Hero() {
+  const { t } = useLanguage()
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -35,11 +37,10 @@ export default function Hero() {
           className="container mx-auto px-4"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            ТОО «Нур Жаусын Импекс
-            <br />
+            {t("hero", "title")}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-8">
-            Премиальное качество пшеницы, муки и сельскохозяйственных продуктов по всей Центральной Азии и за её пределами
+            {t("hero", "subtitle")}
           </p>
           <motion.div
             animate={{ y: [0, 10, 0] }}
