@@ -6,6 +6,7 @@ import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import Navigation from "@/components/navigation"
 import Capabilities from "@/components/capabilities"
+import SupplyGeography from "@/components/supply-geography"
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <section id="capabilities">
         <Capabilities />
       </section>
+      <SupplyGeography />
       <section id="products">
         <Products />
       </section>

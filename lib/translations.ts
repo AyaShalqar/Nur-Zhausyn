@@ -104,6 +104,25 @@ export const translations = {
       socialTitle: "Социальные сети",
       rights: "Все права защищены",
     },
+    supplyGeography: {
+      title: "Жеткізу географиясы",
+      description: "Nur Jauzyn Impex - Солтүстік Қазақстан, Ақмола және Қостанай облыстарында дақылдар өндіретін ірі ауыл шаруашылығы кәсіпорны. Біз өнімдерді Қазақстан, Ресей, Қытай, Өзбекстан, Тәжікстан, Ауғанстан және Әзірбайжанға экспорттаймыз.",
+      countries: {
+        kazakhstan: "Қазақстан",
+        russia: "Ресей",
+        china: "Қытай",
+        uzbekistan: "Өзбекстан",
+        tajikistan: "Тәжікстан",
+        afghanistan: "Ауғанстан",
+        azerbaijan: "Әзірбайжан",
+        turkey: "Түркия",
+        iran: "Иран",
+        georgia: "Грузия",
+        turkmenistan: "Түркіменстан",
+        kyrgyzstan: "Қырғызстан",
+        uae: "БАӘ"
+      }
+    },
   },
   ru: {
     nav: {
@@ -211,6 +230,25 @@ export const translations = {
       socialTitle: "Социальные сети",
       rights: "Все права защищены",
     },
+    supplyGeography: {
+      title: "География поставок",
+      description: "Nur Jauzyn Impex - крупное сельскохозяйственное предприятие, производящее культуры в Северо-Казахстанской, Акмолинской и Костанайской областях. Мы экспортируем продукцию в Казахстан, Россию, Китай, Узбекистан, Таджикистан, Афганистан и Азербайджан.",
+      countries: {
+        kazakhstan: "Казахстан",
+        russia: "Россия",
+        china: "Китай",
+        uzbekistan: "Узбекистан",
+        tajikistan: "Таджикистан",
+        afghanistan: "Афганистан",
+        azerbaijan: "Азербайджан",
+        turkey: "Турция",
+        iran: "Иран",
+        georgia: "Грузия",
+        turkmenistan: "Туркменистан",
+        kyrgyzstan: "Кыргызстан",
+        uae: "ОАЭ"
+      }
+    },
   },
   en: {
     nav: {
@@ -316,6 +354,25 @@ export const translations = {
       contactTitle: "Контакты",
       socialTitle: "Социальные сети",
       rights: "Все права защищены",
+    },
+    supplyGeography: {
+      title: "Supply Geography",
+      description: "Nur Jauzyn Impex is a large agricultural enterprise producing crops in North Kazakhstan, Akmola and Kostanay regions. We export products to Kazakhstan, Russia, China, Uzbekistan, Tajikistan, Afghanistan and Azerbaijan.",
+      countries: {
+        kazakhstan: "Kazakhstan",
+        russia: "Russia",
+        china: "China",
+        uzbekistan: "Uzbekistan",
+        tajikistan: "Tajikistan",
+        afghanistan: "Afghanistan",
+        azerbaijan: "Azerbaijan",
+        turkey: "Turkey",
+        iran: "Iran",
+        georgia: "Georgia",
+        turkmenistan: "Turkmenistan",
+        kyrgyzstan: "Kyrgyzstan",
+        uae: "UAE"
+      }
     },
   },
 }
