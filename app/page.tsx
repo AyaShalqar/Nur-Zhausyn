@@ -11,6 +11,7 @@ import SupplyGeography from "@/components/supply-geography"
 export default function Home() {
   return (
     <main className="relative">
+      <h1 className="sr-only">Нур Жаусын - Ведущая агропромышленная компания Казахстана</h1>
       <Navigation />
       <section id="hero">
         <Hero />

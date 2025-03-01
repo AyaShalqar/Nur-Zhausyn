@@ -12,9 +12,30 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Нур Жаусын",
+    "alternateName": "Nur Jauzyn",
+    "url": "https://ваш-домен.kz",
+    "logo": "https://ваш-домен.kz/logo.png",
+    "description": "Крупное сельскохозяйственное предприятие в Казахстане",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "KZ",
+      "addressRegion": "Северо-Казахстанская область",
+      "addressLocality": "Петропавловск"
+    }
+  }
+
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head />
+    <html lang="kk" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={cn("min-h-screen bg-background font-sans antialiased", inter.className)}>
         <LanguageProvider>
           {children}
@@ -28,7 +49,7 @@ export default function RootLayout({
 
 
 import './globals.css'
-
 export const metadata = {
       generator: 'v0.dev'
     };
+
