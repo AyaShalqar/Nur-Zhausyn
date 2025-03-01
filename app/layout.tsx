@@ -17,8 +17,8 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "Нур Жаусын",
     "alternateName": "Nur Jauzyn",
-    "url": "https://ваш-домен.kz",
-    "logo": "https://ваш-домен.kz/logo.png",
+    "url": "http://localhost:3000",
+    "logo": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3360-removebg-preview-hgan665EZcL46lOyxXpVImcBuOyGJa.png",
     "description": "Крупное сельскохозяйственное предприятие в Казахстане",
     "address": {
       "@type": "PostalAddress",
