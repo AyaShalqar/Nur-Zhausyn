@@ -8,23 +8,10 @@ import { Button } from "@/components/ui/button"
 export default function PhoneInput() {
   const [phone, setPhone] = useState("")
   
-  const formatPhoneNumber = (value: string) => {
-    // Убираем все нецифровые символы
-    const numbers = value.replace(/[^\d]/g, "")
-    
-    // Форматируем номер как +7(XXX)XXX-XX-XX
-    if (numbers.length <= 1) return "+7"
-    if (numbers.length <= 4) return `+7(${numbers.slice(1)}`
-    if (numbers.length <= 7) return `+7(${numbers.slice(1, 4)})${numbers.slice(4)}`
-    if (numbers.length <= 9) return `+7(${numbers.slice(1, 4)})${numbers.slice(4, 7)}-${numbers.slice(7)}`
-    return `+7(${numbers.slice(1, 4)})${numbers.slice(4, 7)}-${numbers.slice(7, 9)}-${numbers.slice(9, 11)}`
-  }
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const formatted = formatPhoneNumber(e.target.value)
-    if (formatted.length <= 17) { // +7(XXX)XXX-XX-XX = 17 символов
-      setPhone(formatted)
-    }
+    // Оставляем только цифры
+    const value = e.target.value.replace(/[^\d]/g, "")
+    setPhone(value)
   }
 
   return (
@@ -43,19 +30,14 @@ export default function PhoneInput() {
             type="tel"
             value={phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 text-lg border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="+7(XXX)XXX-XX-XX"
+            className="w-full px-4 py-3 text-lg font-medium tracking-wide"
+            placeholder="Введите номер телефона"
           />
-          <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-            <span className="text-gray-500">
-              {!phone && "+7"}
-            </span>
-          </div>
         </div>
 
         <Button 
           className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors"
-          disabled={phone.length < 17}
+          disabled={phone.length < 10}
         >
           Отправить
         </Button>
