@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useLanguage } from "@/contexts/language-context"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 
 const countries = [
@@ -12,7 +12,6 @@ const countries = [
 ]
 
 export default function ContactForm() {
-  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -24,25 +23,32 @@ export default function ContactForm() {
 
   const [selectedCountry, setSelectedCountry] = useState(countries[0])
 
+  const formatPhoneNumber = (value: string) => {
+    const numbers = value.replace(/\D/g, "") 
+    if (numbers.length <= 1) return selectedCountry.dial
+    if (numbers.length <= 4) return `${selectedCountry.dial}(${numbers.slice(1)}`
+    if (numbers.length <= 7) return `${selectedCountry.dial}(${numbers.slice(1, 4)})${numbers.slice(4)}`
+    if (numbers.length <= 9) return `${selectedCountry.dial}(${numbers.slice(1, 4)})${numbers.slice(4, 7)}-${numbers.slice(7)}`
+    return `${selectedCountry.dial}(${numbers.slice(1, 4)})${numbers.slice(4, 7)}-${numbers.slice(7, 9)}-${numbers.slice(9, 11)}`
+  }
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-  
-    const whatsappNumber = "77718739263" // Замените на ваш номер (без "+")
-    
+    const whatsappNumber = "77718739263"
+
     const message = `🚀 Новая заявка с сайта Nur Zhausyn Impex:
     
     👤 Имя: ${formData.name}
-    📞 Телефон: ${selectedCountry.dial}${formData.phone}
+    📞 Телефон: ${formData.phone}
     🏢 Компания: ${formData.company}
     📍 Город: ${formData.city}
     💬 Сообщение: ${formData.message || "Нет сообщения"}
     🏷 Тип: ${formData.type === "investor" ? "Инвестор" : formData.type === "partner" ? "Серіктес" : "Жеткізуші"}
     `
-  
+
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
-  
-    window.open(whatsappURL, "_blank") // Открывает WhatsApp в новом окне
-  
+    window.open(whatsappURL, "_blank")
+
     setFormData({
       name: "",
       phone: "",
@@ -52,13 +58,12 @@ export default function ContactForm() {
       type: "investor"
     })
   }
-  
 
   return (
     <div className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8">Коммерциялық ұсыныс</h2>
-        
+
         <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg">
           <div>
             <label className="block text-sm font-medium mb-2">
@@ -69,23 +74,31 @@ export default function ContactForm() {
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500"
               placeholder="Введите ваше имя"
             />
           </div>
 
+          {/* Улучшенный ввод телефона */}
           <div>
             <label className="block text-sm font-medium mb-2">
-              Байланыс телефоны <span className="text-red-500">*</span>
+              📞 Контактный телефон <span className="text-red-500">*</span>
             </label>
-            <div className="flex gap-2">
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="relative flex items-center gap-2 bg-white border rounded-xl px-4 py-2 shadow-md focus-within:ring-2 focus-within:ring-amber-500"
+            >
               <select
                 value={selectedCountry.code}
                 onChange={(e) => {
                   const country = countries.find(c => c.code === e.target.value)
-                  if (country) setSelectedCountry(country)
+                  if (country) {
+                    setSelectedCountry(country)
+                    setFormData({ ...formData, phone: country.dial }) // Автоустановка кода
+                  }
                 }}
-                className="w-1/3 px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                className="bg-transparent border-none focus:ring-0 text-lg font-medium"
               >
                 {countries.map(country => (
                   <option key={country.code} value={country.code}>
@@ -94,32 +107,14 @@ export default function ContactForm() {
                 ))}
               </select>
               <input
-                type="text"
+                type="tel"
                 required
                 value={formData.phone}
-                onChange={(e) => {
-                  // Разрешаем только цифры
-                  const value = e.target.value.replace(/\D/g, '')
-                  setFormData({ ...formData, phone: value })
-                }}
-                className="w-2/3 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                placeholder="Номер телефона"
+                onChange={(e) => setFormData({ ...formData, phone: formatPhoneNumber(e.target.value) })}
+                className="w-full px-2 py-1 text-lg tracking-wide font-semibold text-gray-800 bg-transparent focus:ring-0 outline-none"
+                placeholder="(XXX) XXX-XX-XX"
               />
-            </div>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-2">
-              Компания атауы <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              required
-              value={formData.company}
-              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-              placeholder="Название компании"
-            />
+            </motion.div>
           </div>
 
           <div>
@@ -131,7 +126,7 @@ export default function ContactForm() {
               required
               value={formData.city}
               onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500"
               placeholder="Ваш город"
             />
           </div>
@@ -143,45 +138,9 @@ export default function ContactForm() {
             <textarea
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent h-32"
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 h-32"
               placeholder="Ваше сообщение"
             />
-          </div>
-
-          <div className="flex flex-wrap gap-4">
-            <label className="flex items-center space-x-2 cursor-pointer">
-              <input
-                type="radio"
-                name="type"
-                value="investor"
-                checked={formData.type === "investor"}
-                onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                className="text-amber-600 focus:ring-amber-500"
-              />
-              <span>Инвестор</span>
-            </label>
-            <label className="flex items-center space-x-2 cursor-pointer">
-              <input
-                type="radio"
-                name="type"
-                value="partner"
-                checked={formData.type === "partner"}
-                onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                className="text-amber-600 focus:ring-amber-500"
-              />
-              <span>Серіктес</span>
-            </label>
-            <label className="flex items-center space-x-2 cursor-pointer">
-              <input
-                type="radio"
-                name="type"
-                value="supplier"
-                checked={formData.type === "supplier"}
-                onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                className="text-amber-600 focus:ring-amber-500"
-              />
-              <span>Жеткізуші</span>
-            </label>
           </div>
 
           <Button 
@@ -194,4 +153,4 @@ export default function ContactForm() {
       </div>
     </div>
   )
-} 
+}
