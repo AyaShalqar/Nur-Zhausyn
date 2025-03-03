@@ -17,7 +17,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "Нур Жаусын",
     "alternateName": "Nur Jauzyn",
-    "url": "http://localhost:3000",
+    "url": "https://www.nur-zhausyn.kz",
     "logo": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3360-removebg-preview-hgan665EZcL46lOyxXpVImcBuOyGJa.png",
     "description": "Крупное сельскохозяйственное предприятие в Казахстане",
     "address": {
