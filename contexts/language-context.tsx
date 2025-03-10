@@ -34,15 +34,29 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const t = (section: string, key: string): string => {
     try {
-      const path = section.split(".")
-      let result = translations[language]
-
-      // Navigate through the nested objects
+      // Безопасно получаем перевод по пути
+      let currentTranslations = translations[language];
+      
+      // Если секция содержит точки, это путь к вложенному объекту
+      const path = section.split(".");
+      
+      // Безопасно проходим по вложенным объектам
+      let result: any = currentTranslations;
       for (const part of path) {
-        result = result[part]
+        // Проверяем, существует ли свойство
+        if (result && typeof result === 'object' && part in result) {
+          result = result[part as keyof typeof result];
+        } else {
+          return `${section}.${key}`; // Возвращаем путь в качестве fallback
+        }
       }
-
-      return result[key] || `${section}.${key}`
+      
+      // Проверяем, существует ли ключ
+      if (result && typeof result === 'object' && key in result) {
+        return result[key as keyof typeof result];
+      }
+      
+      return `${section}.${key}`; // Fallback
     } catch (error) {
       console.error(`Translation missing for ${section}.${key} in ${language}`)
       return `${section}.${key}`
