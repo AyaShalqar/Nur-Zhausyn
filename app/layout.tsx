@@ -7,6 +7,28 @@ import { LanguageProvider } from "@/contexts/language-context"
 
 const inter = Inter({ subsets: ["latin"] })
 
+export const metadata = {
+  title: "Nur Zhausyn - Ведущая агропромышленная компания Казахстана",
+  description: "Крупное сельскохозяйственное предприятие в Казахстане",
+  generator: "v0.dev",
+  icons: {
+    icon: [
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3360-removebg-preview-hgan665EZcL46lOyxXpVImcBuOyGJa.png",
+        sizes: "32x32",
+        type: "image/png"
+      },
+      {
+        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3360-removebg-preview-hgan665EZcL46lOyxXpVImcBuOyGJa.png",
+        sizes: "16x16",
+        type: "image/png"
+      }
+    ],
+    shortcut: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3360-removebg-preview-hgan665EZcL46lOyxXpVImcBuOyGJa.png",
+    apple: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3360-removebg-preview-hgan665EZcL46lOyxXpVImcBuOyGJa.png"
+  }
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -46,10 +68,4 @@ export default function RootLayout({
   )
 }
 
-
-
-import './globals.css'
-export const metadata = {
-      generator: 'v0.dev'
-    };
 

@@ -22,7 +22,7 @@ export default function Navigation() {
 
   const scrollToSection = (sectionId: string) => {
     setIsMobileMenuOpen(false)
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(`${sectionId}-section`)
     if (element) {
       const offset = 80
       const elementPosition = element.getBoundingClientRect().top

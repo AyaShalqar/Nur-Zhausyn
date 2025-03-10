@@ -13,25 +13,25 @@ export default function Home() {
     <main className="relative">
       <h1 className="sr-only">Nur Zhausyn - Ведущая агропромышленная компания Казахстана</h1>
       <Navigation />
-      <section id="hero">
+      <div id="hero-section">
         <Hero />
-      </section>
-      <section id="about">
+      </div>
+      <div id="about-section">
         <About />
-      </section>
-      <section id="capabilities">
+      </div>
+      <div id="capabilities-section">
         <Capabilities />
-      </section>
+      </div>
       <SupplyGeography />
-      <section id="products">
+      <div id="products-section">
         <Products />
-      </section>
-      <section id="infrastructure">
+      </div>
+      <div id="infrastructure-section">
         <Infrastructure />
-      </section>
-      <section id="contact">
+      </div>
+      <div id="contact-section">
         <Contact />
-      </section>
+      </div>
       <Footer />
     </main>
   )
