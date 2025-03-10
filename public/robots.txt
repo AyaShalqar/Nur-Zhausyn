@@ -1,3 +1,33 @@
+# Nur Zhausyn Impex - Robots.txt
+# Разрешаем индексацию всем поисковым роботам
 User-agent: *
 Allow: /
-Sitemap: https://ваш-домен.kz/sitemap.xml 
+
+# Запрещаем индексацию административных разделов (если есть)
+Disallow: /admin/
+Disallow: /admin-panel/
+Disallow: /wp-admin/
+Disallow: /login
+Disallow: /cgi-bin/
+Disallow: /tmp/
+
+# Разрешаем Googlebot без ограничений и задаем частоту обхода
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Разрешаем Yandexbot без ограничений и задаем частоту обхода
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+# Специальные настройки для Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Указываем путь к карте сайта
+Sitemap: https://www.nur-zhausyn.kz/sitemap.xml
+
+# Путь к фиду новостей (если будет доступен)
+# Sitemap: https://www.nur-zhausyn.kz/news-sitemap.xml 

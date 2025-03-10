@@ -1,10 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Главная страница на казахском (основной язык) -->
   <url>
-    <loc>https://ваш-домен.kz</loc>
-    <lastmod>2024-03-19</lastmod>
+    <loc>https://www.nur-zhausyn.kz/</loc>
+    <lastmod>2024-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://www.nur-zhausyn.kz/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.nur-zhausyn.kz/ru"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nur-zhausyn.kz/en"/>
   </url>
-  <!-- Добавьте другие страницы вашего сайта -->
+  
+  <!-- Главная страница на русском -->
+  <url>
+    <loc>https://www.nur-zhausyn.kz/ru</loc>
+    <lastmod>2024-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://www.nur-zhausyn.kz/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.nur-zhausyn.kz/ru"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nur-zhausyn.kz/en"/>
+  </url>
+  
+  <!-- Главная страница на английском -->
+  <url>
+    <loc>https://www.nur-zhausyn.kz/en</loc>
+    <lastmod>2024-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://www.nur-zhausyn.kz/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.nur-zhausyn.kz/ru"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.nur-zhausyn.kz/en"/>
+  </url>
+  
+  <!-- Здесь можно добавить другие страницы вашего сайта, когда они будут созданы -->
 </urlset> 
