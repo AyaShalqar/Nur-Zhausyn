@@ -1,21 +1,41 @@
 {
-  "name": "Nur Zhausyn",
+  "name": "Nur Zhausyn Impex",
   "short_name": "Nur Zhausyn",
-  "description": "Ведущая агропромышленная компания Казахстана",
+  "description": "Крупное сельскохозяйственное предприятие в Казахстане",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "theme_color": "#ffffff",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "/icon-192x192.png",
+      "src": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3360-removebg-preview-hgan665EZcL46lOyxXpVImcBuOyGJa.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "/icon-512x512.png",
+      "src": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_3360-removebg-preview-hgan665EZcL46lOyxXpVImcBuOyGJa.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "О компании",
+      "url": "/#about-section",
+      "description": "Информация о компании Nur Zhausyn"
+    },
+    {
+      "name": "Продукция",
+      "url": "/#products-section",
+      "description": "Наша продукция"
+    }
+  ],
+  "categories": ["business", "agriculture"],
+  "lang": "kk",
+  "dir": "ltr"
 } 

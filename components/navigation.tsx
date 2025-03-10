@@ -11,6 +11,7 @@ export default function Navigation() {
   const { t } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +52,8 @@ export default function Navigation() {
               height={50}
               className="h-12 w-auto cursor-pointer"
               onClick={() => scrollToSection("hero")}
+              priority={true}
+              onLoad={() => setImageLoaded(true)}
             />
           </div>
 

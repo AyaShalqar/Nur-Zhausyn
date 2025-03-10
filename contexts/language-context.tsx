@@ -15,8 +15,10 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("kz")
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
+    setIsClient(true)
     const savedLanguage = localStorage.getItem("language") as Language
     if (savedLanguage && ["kz", "ru", "en"].includes(savedLanguage)) {
       setLanguage(savedLanguage)
@@ -25,7 +27,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang)
-    localStorage.setItem("language", lang)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("language", lang)
+    }
   }
 
   const t = (section: string, key: string): string => {
